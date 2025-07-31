@@ -13,65 +13,7 @@
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
     };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-
-    combos {
-        compatible = "zmk,combos";
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-        cmben {
-            bindings = <&layer_en>;
-            key-positions = <3 4>;
-            layers = <1>;
-        };
-
-        cmbru {
-            bindings = <&layer_ru>;
-            key-positions = <3 4>;
-            layers = <0>;
-        };
-        bkspc {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <17 18>;
-        };
-
-        del {
-            bindings = <&kp DELETE>;
-            key-positions = <28 29>;
-        };
-
-        snglq {
-            bindings = <&kp SQT>;
-            key-positions = <8 9>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-        };
-
-        x {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <24 25>;
-        };
-
-        b {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <26 27>;
-        };
-
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <16 17>;
-        };
-    };
+ 
 
     macros {
         en_dot: en_dot {
@@ -109,21 +51,12 @@
             label = "LAYER_RU";
         };
 
-        en: en {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&to_en &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_wait_time 10>,
-                <&to_ru>,
-                <&macro_wait_time 10>;
-
-            label = "EN";
-        };
+        
     };
 
 
-
+keymap {
+        compatible = "zmk,keymap";
 
         base {
             bindings = <
