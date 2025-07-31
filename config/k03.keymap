@@ -26,14 +26,14 @@
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(N2))>;
+            bindings = <&kp LS(LC(N9))>;
             label = "TO_RU";
         };
 
         to_en: to_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(N1))>;
+            bindings = <&kp LS(LC(NUMBER_8))>;
             label = "TO_EN";
         };
 
@@ -49,6 +49,20 @@
             #binding-cells = <0>;
             bindings = <&to 1 &to_ru>;
             label = "LAYER_RU";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        ent {
+            bindings = <&kp ENTER>;
+            key-positions = <31 32>;
+        };
+
+        bspac {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <32 33>;
         };
     };
 
