@@ -26,14 +26,14 @@
         to_ru: to_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(N9))>;
+            bindings = <&kp LS(LC(N8))>;
             label = "TO_RU";
         };
 
         to_en: to_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LC(NUMBER_8))>;
+            bindings = <&kp LS(LC(N9))>;
             label = "TO_EN";
         };
 
@@ -95,6 +95,26 @@
         del {
             bindings = <&kp DELETE>;
             key-positions = <46 47>;
+        };
+
+        all {
+            bindings = <&kp LC(A)>;
+            key-positions = <25 26>;
+        };
+
+        x {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <40 41>;
+        };
+
+        left_br {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <44 45>;
+        };
+
+        e {
+            bindings = <&kp SQT>;
+            key-positions = <20 21>;
         };
     };
 
