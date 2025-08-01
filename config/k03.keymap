@@ -116,6 +116,11 @@
             bindings = <&kp SQT>;
             key-positions = <20 21>;
         };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
