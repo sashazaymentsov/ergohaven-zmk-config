@@ -166,7 +166,6 @@
         };
 
         ru_sy {
-            
             bindings = <
 &trans  &trans  &trans        &trans         &trans        &een LS(LBRC)                     &trans          &trans          &trans      &trans        &trans  &trans
 &trans  &trans  &kp MINUS     &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                      &een LS(COLON)  &een LS(QMARK)  &een GRAVE  &een LS(DQT)  &trans  &trans
@@ -174,6 +173,7 @@
 &trans  &trans  &kp LS(STAR)  &een FSLH      &een LS(AT)   &trans         &trans     &trans  &trans          &kp LS(EXCL)    &trans      &trans        &trans  &trans
                 &trans        &trans         &kp BSPC      &none          &kp RET    &trans  &trans          &trans          &trans      &trans
             >;
+
             label = "ru_sy";
         };
 
@@ -203,16 +203,14 @@
 
         nav {
             bindings = <
-&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                     &kp F7           &kp F8   &kp F9     &kp F10  &kp F11  &kp F12
-&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                    &kp PG_UP        &kp N7   &kp N8     &kp N9   &trans   &trans
-&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                    &kp PG_DN        &en DOT  &en COMMA  &kp N6   &trans   &trans
-&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans  &kp PRINTSCREEN  &kp N1   &kp N2     &kp N3   &trans   &trans
-                &trans        &trans    &trans         &trans   &trans    &trans  &mo 5            &trans   &kp N0     &trans
+&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                     &kp F7           &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                    &kp PG_UP        &kp N7  &kp N8  &kp N9   &trans   &trans
+&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                    &kp PG_DN        &none   &none   &kp N6   &trans   &trans
+&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans  &kp PRINTSCREEN  &kp N1  &kp N2  &kp N3   &trans   &trans
+                &trans        &trans    &trans         &trans   &trans    &trans  &mo 5            &trans  &kp N0  &trans
             >;
 
             display-name = "Navigation";
         };
-
-        
     };
 };
