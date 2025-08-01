@@ -120,7 +120,7 @@
                           &none   &kp LEFT_WIN  &kp LEFT_ALT  &mo 2   &kp SPACE    &kp ENTER  &mo 4   &layer_ru  &none      &none
             >;
 
-            display-name = "EN";
+            display-name = "Base";
             sensor-bindings =
                 <&enc_vol>,
                 <&enc_vol>,
@@ -166,7 +166,7 @@
         };
 
         ru_sy {
-            label = "ru_sy";
+            
             bindings = <
 &trans  &trans  &trans        &trans         &trans        &een LS(LBRC)                     &trans          &trans          &trans      &trans        &trans  &trans
 &trans  &trans  &kp MINUS     &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                      &een LS(COLON)  &een LS(QMARK)  &een GRAVE  &een LS(DQT)  &trans  &trans
@@ -174,6 +174,7 @@
 &trans  &trans  &kp LS(STAR)  &een FSLH      &een LS(AT)   &trans         &trans     &trans  &trans          &kp LS(EXCL)    &trans      &trans        &trans  &trans
                 &trans        &trans         &kp BSPC      &none          &kp RET    &trans  &trans          &trans          &trans      &trans
             >;
+            label = "ru_sy";
         };
 
         navig {
@@ -212,17 +213,6 @@
             display-name = "Navigation";
         };
 
-        delete_pls_1 {
-            bindings = <
-&trans  &trans    &kp AT    &kp DLLR   &kp HASH  &trans                       &trans     &trans    &kp CARET  &trans    &trans    &trans
-&trans  &trans    &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &trans     &kp LBKT  &kp UNDER  &kp RBKT  &trans    &trans
-&trans  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp PRCNT  &kp LBRC  &kp SEMI   &kp RBRC  &kp EXCL  &trans
-&trans  &trans    &kp STAR  &kp COLON  &kp FSLH  &trans     &trans    &trans  &trans     &kp PIPE  &kp TILDE  &kp AMPS  &trans    &trans
-                  &trans    &trans     &trans    &mo 5      &trans    &trans  &trans     &trans    &trans     &trans
-            >;
-
-            display-name = "Symbols";
-            label = "delete_pls_1";
-        };
+        
     };
 };
