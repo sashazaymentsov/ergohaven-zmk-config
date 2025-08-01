@@ -61,7 +61,11 @@
         en_symb: en_symb {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&to_en &mo 2>;
+            bindings =
+                <&macro_press>,
+                <&to_en &mo 2>,
+                <&macro_press>,
+                <&layer_en>;
 
             label = "EN_SYMB";
         };
