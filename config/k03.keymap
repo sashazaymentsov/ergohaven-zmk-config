@@ -122,7 +122,7 @@
                           &none   &kp LEFT_WIN  &kp LEFT_ALT  &en_symb  &kp SPACE    &kp ENTER  &mo 3   &layer_ru  &none      &none
             >;
 
-            display-name = "Base";
+            display-name = "EN";
             sensor-bindings =
                 <&enc_vol>,
                 <&enc_vol>,
@@ -164,7 +164,7 @@
                 &trans        &trans         &kp BSPC      &none         &kp RET    &trans  &trans         &trans         &trans     &trans
             >;
 
-            label = "en_symb";
+            label = "en_sy";
         };
 
         navig {
