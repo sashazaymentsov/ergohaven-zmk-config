@@ -12,6 +12,13 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
+        test_behavior: test_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TEST_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LC(FSLH)>;
+        };
     };
 
     macros {
@@ -155,11 +162,11 @@
 
         en_sy {
             bindings = <
-&trans  &trans  &trans        &trans         &trans        &kp LS(LBRC)                     &trans         &trans         &trans     &trans       &trans  &trans
-&trans  &trans  &kp MINUS     &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                     &kp LS(COLON)  &kp LS(QMARK)  &kp GRAVE  &kp LS(DQT)  &trans  &trans
-&trans  &trans  &kp LS(LT)    &kp LS(UNDER)  &kp LS(GT)    &kp LBKT                         &kp SEMI       &kp DOT        &kp COMMA  &trans       &trans  &trans
-&trans  &trans  &kp LS(STAR)  &kp FSLH       &kp LS(AT)    &trans        &trans     &trans  &trans         &kp LS(EXCL)   &trans     &trans       &trans  &trans
-                &trans        &trans         &kp BSPC      &none         &kp RET    &trans  &trans         &trans         &trans     &trans
+&trans  &trans  &trans          &trans         &trans        &kp LS(LBRC)                     &trans         &trans         &trans     &trans       &trans  &trans
+&trans  &trans  &test_behavior  &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                     &kp LS(COLON)  &kp LS(QMARK)  &kp GRAVE  &kp LS(DQT)  &trans  &trans
+&trans  &trans  &kp LS(LT)      &kp LS(UNDER)  &kp LS(GT)    &kp LBKT                         &kp SEMI       &kp DOT        &kp COMMA  &trans       &trans  &trans
+&trans  &trans  &kp LS(STAR)    &kp FSLH       &kp LS(AT)    &trans        &trans     &trans  &trans         &kp LS(EXCL)   &trans     &trans       &trans  &trans
+                &trans          &trans         &kp BSPC      &none         &kp RET    &trans  &trans         &trans         &trans     &trans
             >;
 
             label = "en_sy";
