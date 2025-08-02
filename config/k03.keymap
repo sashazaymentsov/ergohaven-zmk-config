@@ -127,7 +127,7 @@
                           &none   &kp LEFT_WIN  &kp LEFT_ALT  &mo 2   &kp SPACE    &kp ENTER  &mo 4   &layer_ru  &none      &mo 5
             >;
 
-            display-name = "Base";
+            display-name = "EN";
             sensor-bindings =
                 <&enc_vol>,
                 <&enc_vol>,
