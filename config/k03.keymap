@@ -243,5 +243,17 @@
 
             label = "SCuts";
         };
+
+        kmrb {
+            bindings = <
+&none  &none  &none  &none  &none  &none                        &none      &none        &none       &none       &none  &none
+&none  &none  &none  &none  &none  &none                        &none      &kp LA(N1)   &kp LG(UP)  &kp LA(N2)  &none  &none
+&none  &none  &none  &none  &none  &none                        &none      &none        &kp LA(M)   &none       &none  &none
+&none  &none  &none  &none  &none  &none  &none    &none        &none      &none        &none       &none       &none  &none
+              &none  &none  &none  &none  &none    &kp LG(TAB)  &kp LG(D)  &kp LC(TAB)  &none       &none
+            >;
+
+            label = "kmrb";
+        };
     };
 };
