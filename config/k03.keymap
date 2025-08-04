@@ -263,7 +263,7 @@
 
         kmrb {
             bindings = <
-&none  &none  &none  &none  &none  &none                        &none      &none        &none       &none       &none  &none
+&none  &none  &none  &none  &none  &none                        &none      &kp LA(T)    &none       &kp LA(P)   &none  &none
 &none  &none  &none  &none  &none  &none                        &none      &kp LA(N1)   &kp LG(UP)  &kp LA(N2)  &none  &none
 &none  &none  &none  &none  &none  &none                        &none      &td2         &kp LA(M)   &td2        &none  &none
 &none  &none  &none  &none  &none  &none  &none    &none        &none      &none        &none       &none       &none  &none
