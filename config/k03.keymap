@@ -21,6 +21,23 @@
 
             tapping-term-ms = <195>;
         };
+
+        td2: td2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD2";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp LS(LA(LEFT_BRACKET))>, <&kp LS(LA(H))>;
+        };
+
+        td3: td3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD3";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(RIGHT_BRACKET))>, <&kp LS(LA(L))>;
+
+            tapping-term-ms = <250>;
+        };
     };
 
     macros {
@@ -132,10 +149,10 @@
 
         EN {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &none
-&kp TAB           &kp Q   &kp W   &kp E         &kp R         &kp T                             &kp Y   &kp U      &kp I      &kp O    &kp P     &none
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D         &kp F         &kp G                             &kp H   &kp J      &kp K      &kp L    &kp SEMI  &none
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C         &kp V         &kp B   &kp LBKT       &kp RBKT   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
+&kp GRAVE         &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &none
+&kp TAB           &kp Q   &kp W   &kp E         &kp R         &kp T                             &kp Y   &kp U      &kp I      &kp O    &kp P       &none
+&kp LEFT_SHIFT    &kp A   &kp S   &kp D         &kp F         &kp G                             &kp H   &kp J      &kp K      &kp L    &lt 8 SEMI  &none
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C         &kp V         &kp B   &kp LBKT       &kp RBKT   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
                           &none   &kp LEFT_WIN  &kp LEFT_ALT  &mo 2   &lt 7 SPACE    &kp ENTER  &mo 4   &layer_ru  &none      &mo 5
             >;
 
@@ -154,10 +171,10 @@
         RU {
             display-name = "RU";
             bindings = <
-&kp GRAVE   &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &none
-&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T                             &kp Y   &kp U      &kp I      &kp O    &kp P     &none
-&kp LSHIFT  &kp A   &kp S   &kp D         &kp F         &kp G                             &kp H   &kp J      &kp K      &kp L    &kp SEMI  &none
-&kp LCTRL   &kp Z   &kp X   &kp C         &kp V         &kp B   &kp LBKT       &kp RBKT   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
+&kp GRAVE   &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &none
+&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T                             &kp Y   &kp U      &kp I      &kp O    &kp P       &none
+&kp LSHIFT  &kp A   &kp S   &kp D         &kp F         &kp G                             &kp H   &kp J      &kp K      &kp L    &lt 8 SEMI  &none
+&kp LCTRL   &kp Z   &kp X   &kp C         &kp V         &kp B   &kp LBKT       &kp RBKT   &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
                     &none   &kp LEFT_WIN  &kp LEFT_ALT  &mo 3   &lt 7 SPACE    &kp ENTER  &mo 4   &layer_en  &none      &none
             >;
 
@@ -248,7 +265,7 @@
             bindings = <
 &none  &none  &none  &none  &none  &none                        &none      &none        &none       &none       &none  &none
 &none  &none  &none  &none  &none  &none                        &none      &kp LA(N1)   &kp LG(UP)  &kp LA(N2)  &none  &none
-&none  &none  &none  &none  &none  &none                        &none      &none        &kp LA(M)   &none       &none  &none
+&none  &none  &none  &none  &none  &none                        &none      &td2         &kp LA(M)   &td2        &none  &none
 &none  &none  &none  &none  &none  &none  &none    &none        &none      &none        &none       &none       &none  &none
               &none  &none  &none  &none  &none    &kp LG(TAB)  &kp LG(D)  &kp LC(TAB)  &none       &none
             >;
