@@ -13,13 +13,13 @@
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
 
-        test_behavior: test_behavior {
+        td0: td0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TEST_BEHAVIOR";
+            label = "TD0";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LC(FSLH)>;
+            bindings = <&kp MINUS>, <&slash>;
 
-            tapping-term-ms = <195>;
+            tapping-term-ms = <300>;
         };
 
         td2: td2 {
@@ -35,6 +35,15 @@
             label = "TD3";
             #binding-cells = <0>;
             bindings = <&kp LS(LA(RIGHT_BRACKET))>, <&kp LS(LA(L))>;
+
+            tapping-term-ms = <300>;
+        };
+
+        td4: td4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD4";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LC(SLASH)>;
 
             tapping-term-ms = <300>;
         };
@@ -87,6 +96,19 @@
                 <&macro_wait_time 10>;
 
             label = "EN";
+        };
+
+        slash: slash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&to_en>,
+                <&macro_wait_time 10>,
+                <&kp LC(FSLH)>,
+                <&macro_wait_time 10>,
+                <&to_ru>;
+
+            label = "SLASH";
         };
     };
 
@@ -191,11 +213,11 @@
 
         en_sy {
             bindings = <
-&trans  &trans  &trans          &trans         &trans        &kp LS(LBRC)                     &trans         &trans         &trans     &trans       &trans  &trans
-&trans  &trans  &test_behavior  &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                     &kp LS(COLON)  &kp LS(QMARK)  &kp GRAVE  &kp LS(DQT)  &trans  &trans
-&trans  &trans  &kp LS(LT)      &kp LS(UNDER)  &kp LS(GT)    &kp LBKT                         &kp SEMI       &kp DOT        &kp COMMA  &trans       &trans  &trans
-&trans  &trans  &kp LS(STAR)    &kp FSLH       &kp LS(AT)    &trans        &trans     &trans  &trans         &kp LS(EXCL)   &trans     &trans       &trans  &trans
-                &trans          &trans         &kp BSPC      &none         &kp RET    &trans  &trans         &trans         &trans     &trans
+&trans  &trans  &trans        &trans         &trans        &kp LS(LBRC)                     &trans         &trans         &trans     &trans       &trans  &trans
+&trans  &trans  &td4          &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                     &kp LS(COLON)  &kp LS(QMARK)  &kp GRAVE  &kp LS(DQT)  &trans  &trans
+&trans  &trans  &kp LS(LT)    &kp LS(UNDER)  &kp LS(GT)    &kp LBKT                         &kp SEMI       &kp DOT        &kp COMMA  &trans       &trans  &trans
+&trans  &trans  &kp LS(STAR)  &kp FSLH       &kp LS(AT)    &trans        &trans     &trans  &trans         &kp LS(EXCL)   &trans     &trans       &trans  &trans
+                &trans        &trans         &kp BSPC      &none         &kp RET    &trans  &trans         &trans         &trans     &trans
             >;
 
             label = "en_sy";
@@ -203,11 +225,11 @@
 
         ru_sy {
             bindings = <
-&trans  &trans  &trans          &trans         &trans        &een LS(LBRC)                     &trans          &trans          &trans      &trans        &trans  &trans
-&trans  &trans  &test_behavior  &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                      &een LS(COLON)  &een LS(QMARK)  &een GRAVE  &een LS(DQT)  &trans  &trans
-&trans  &trans  &een LS(LT)     &kp LS(UNDER)  &een LS(GT)   &een LBKT                         &een SEMI       &een DOT        &een COMMA  &trans        &trans  &trans
-&trans  &trans  &kp LS(STAR)    &een FSLH      &een LS(AT)   &trans         &trans     &trans  &trans          &kp LS(EXCL)    &trans      &trans        &trans  &trans
-                &trans          &trans         &kp BSPC      &none          &kp RET    &trans  &trans          &trans          &trans      &trans
+&trans  &trans  &trans        &trans         &trans        &een LS(LBRC)                     &trans          &trans          &trans      &trans        &trans  &trans
+&trans  &trans  &td0          &kp EQUAL      &kp LS(PLUS)  &kp LS(LPAR)                      &een LS(COLON)  &een LS(QMARK)  &een GRAVE  &een LS(DQT)  &trans  &trans
+&trans  &trans  &een LS(LT)   &kp LS(UNDER)  &een LS(GT)   &een LBKT                         &een SEMI       &een DOT        &een COMMA  &trans        &trans  &trans
+&trans  &trans  &kp LS(STAR)  &een FSLH      &een LS(AT)   &trans         &trans     &trans  &trans          &kp LS(EXCL)    &trans      &trans        &trans  &trans
+                &trans        &trans         &kp BSPC      &none          &kp RET    &trans  &trans          &trans          &trans      &trans
             >;
 
             label = "ru_sy";
