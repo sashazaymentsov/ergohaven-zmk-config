@@ -26,7 +26,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD2";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             bindings = <&kp LS(LA(LEFT_BRACKET))>, <&kp LS(LA(H))>;
         };
 
@@ -36,7 +36,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LA(RIGHT_BRACKET))>, <&kp LS(LA(L))>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
         };
     };
 
@@ -156,7 +156,7 @@
                           &none   &kp LEFT_WIN  &kp LEFT_ALT  &mo 2   &lt 7 SPACE    &kp ENTER  &mo 4   &layer_ru  &none      &mo 5
             >;
 
-            display-name = "Base";
+            display-name = "EN";
             sensor-bindings =
                 <&enc_vol>,
                 <&enc_vol>,
