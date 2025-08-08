@@ -164,6 +164,21 @@
             bindings = <&kp LC(T)>;
             key-positions = <17 16>;
         };
+
+        buffer {
+            bindings = <&kp LA(LC(LG(T)))>;
+            key-positions = <39 40>;
+        };
+
+        compact {
+            bindings = <&kp LA(LC(C))>;
+            key-positions = <37 38>;
+        };
+
+        ctr_a {
+            bindings = <&kp LC(A)>;
+            key-positions = <25 26>;
+        };
     };
 
     keymap {
