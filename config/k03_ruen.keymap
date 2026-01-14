@@ -12,11 +12,12 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&slash>;
+            bindings = <&kp MINUS>, <&kp LC(SLASH)>;
 
             tapping-term-ms = <300>;
         };
@@ -46,87 +47,83 @@
 
             tapping-term-ms = <300>;
         };
-
-
-
-
     };
+
     combos {
-            compatible = "zmk,combos";
+        compatible = "zmk,combos";
 
-            ent {
-                bindings = <&kp ENTER>;
-                key-positions = <31 32>;
-                layers = <4 9>;
-            };
-
-            bspac {
-                bindings = <&kp BACKSPACE>;
-                key-positions = <32 33>;
-                layers = <4 9>;
-            };
-
-            del {
-                bindings = <&kp DELETE>;
-                key-positions = <46 47>;
-                layers = <4>;
-            };
-
-            all {
-                bindings = <&kp LC(A)>;
-                key-positions = <25 26>;
-                layers = <2 3>;
-            };
-
-            x {
-                bindings = <&kp LEFT_BRACKET>;
-                key-positions = <40 41>;
-                layers = <0 1>;
-            };
-
-            left_br {
-                bindings = <&kp RIGHT_BRACKET>;
-                key-positions = <44 45>;
-                layers = <0 1>;
-            };
-
-            e {
-                bindings = <&kp SQT>;
-                key-positions = <20 21>;
-                layers = <0 1>;
-            };
-
-            esc {
-                bindings = <&kp ESC>;
-                key-positions = <13 14>;
-                layers = <2 3>;
-            };
-
-            flow {
-                bindings = <&kp LS(LA(LC(LG(F))))>;
-                key-positions = <29 28>;
-                layers = <2 3>;
-            };
-
-            ctrT {
-                bindings = <&kp LC(T)>;
-                key-positions = <17 16>;
-                layers = <2 3>;
-            };
-
-            buffer {
-                bindings = <&kp LC(LG(V))>;
-                key-positions = <39 40>;
-                layers = <2 3>;
-            };
-
-            compact {
-                bindings = <&kp LA(LC(C))>;
-                key-positions = <37 38>;
-                layers = <2 3>;
-            };
+        ent {
+            bindings = <&kp ENTER>;
+            key-positions = <31 32>;
+            layers = <4 9>;
         };
-    
+
+        bspac {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <32 33>;
+            layers = <4 9>;
+        };
+
+        del {
+            bindings = <&kp DELETE>;
+            key-positions = <46 47>;
+            layers = <4>;
+        };
+
+        all {
+            bindings = <&kp LC(A)>;
+            key-positions = <25 26>;
+            layers = <2 3>;
+        };
+
+        x {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <40 41>;
+            layers = <0 1>;
+        };
+
+        left_br {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <44 45>;
+            layers = <0 1>;
+        };
+
+        e {
+            bindings = <&kp SQT>;
+            key-positions = <20 21>;
+            layers = <0 1>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <13 14>;
+            layers = <2 3>;
+        };
+
+        flow {
+            bindings = <&kp LS(LA(LC(LG(F))))>;
+            key-positions = <29 28>;
+            layers = <2 3>;
+        };
+
+        ctrT {
+            bindings = <&kp LC(T)>;
+            key-positions = <17 16>;
+            layers = <2 3>;
+        };
+
+        buffer {
+            bindings = <&kp LC(LG(V))>;
+            key-positions = <39 40>;
+            layers = <2 3>;
+        };
+
+        compact {
+            bindings = <&kp LA(LC(C))>;
+            key-positions = <37 38>;
+            layers = <2 3>;
+        };
+    };
 
     macros {
         to_ru: to_ru {
@@ -183,7 +180,6 @@
             tap-ms = <30>;
         };
     };
-    
 
     keymap {
         compatible = "zmk,keymap";
@@ -244,11 +240,11 @@
 
         ru_sy {
             bindings = <
-&trans  &trans            &trans        &trans         &trans        &none                          &trans          &trans          &trans      &trans        &trans  &trans
-&trans  &en LEFT_BRACE    &td0          &kp EQUAL      &kp LS(PLUS)  &en SQT                        &en LS(COLON)   &en LS(QMARK)   &en GRAVE   &en LS(DQT)   &trans  &trans
-&trans  &kp LPAR          &en LS(LT)    &kp LS(UNDER)  &en LS(GT)    &en COMMA                      &en SEMI        &en DOT         &en COMMA   &trans        &trans  &trans
-&trans  &en LEFT_BRACKET  &kp LS(STAR)  &en FSLH       &en LS(AT)    &trans      &trans     &trans  &trans          &kp LS(EXCL)    &trans      &trans        &trans  &trans
-                          &trans        &trans         &kp BSPC      &none       &kp RET    &trans  &trans          &trans          &trans      &trans
+&trans  &trans            &trans        &trans         &trans        &none                         &trans         &trans         &trans     &trans       &trans  &trans
+&trans  &en LEFT_BRACE    &td0          &kp EQUAL      &kp LS(PLUS)  &en SQT                       &en LS(COLON)  &en LS(QMARK)  &en GRAVE  &en LS(DQT)  &trans  &trans
+&trans  &kp LPAR          &en LS(LT)    &kp LS(UNDER)  &en LS(GT)    &en COMMA                     &en SEMI       &en DOT        &en COMMA  &trans       &trans  &trans
+&trans  &en LEFT_BRACKET  &kp LS(STAR)  &en FSLH       &en LS(AT)    &trans     &trans     &trans  &trans         &kp LS(EXCL)   &trans     &trans       &trans  &trans
+                          &trans        &trans         &kp BSPC      &none      &kp RET    &trans  &trans         &trans         &trans     &trans
             >;
 
             label = "ru_sy";
