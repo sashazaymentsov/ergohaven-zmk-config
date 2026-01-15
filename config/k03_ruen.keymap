@@ -298,7 +298,7 @@
 &kp TAB    &kp Q   &kp W   &kp E     &kp R   &kp T                              &kp Y   &kp U          &kp I      &kp O    &kp P     &to 0
 &kp LSHFT  &kp A   &kp S   &kp D     &kp F   &kp G                              &kp H   &kp J          &kp K      &kp L    &kp SEMI  &trans
 &kp LCTRL  &kp Z   &kp X   &kp C     &kp V   &kp B      &trans       &trans     &kp N   &kp M          &kp COMMA  &kp DOT  &trans    &trans
-                   &trans  &kp LALT  &mo 9   &kp LCTRL  &kp LSHFT    &kp ENTER  &to 4   &kp LG(SPACE)  &trans     &trans
+                   &trans  &kp LALT  &mo 9   &kp LCTRL  &kp SPACE    &kp ENTER  &to 4   &kp LG(SPACE)  &trans     &trans
             >;
 
             label = "GL_1";
