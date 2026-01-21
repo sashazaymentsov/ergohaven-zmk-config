@@ -47,6 +47,15 @@
 
             tapping-term-ms = <300>;
         };
+
+        screen_shot: screen_shot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SCREEN_SHOT";
+            #binding-cells = <0>;
+            bindings = <&kp LS(PRINTSCREEN)>, <&kp LC(PRINTSCREEN)>;
+
+            tapping-term-ms = <300>;
+        };
     };
 
     combos {
@@ -97,7 +106,7 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <13 14>;
-            layers = <2 3>;
+            layers = <0 1>;
         };
 
         ctrT {
@@ -107,7 +116,7 @@
         };
 
         buffer {
-            bindings = <&kp LC(LS(V))>;
+            bindings = <&kp LC(LG(V))>;
             key-positions = <39 40>;
             layers = <2 3>;
         };
@@ -180,20 +189,18 @@
 
         EN {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2            &kp N3        &kp N4        &kp N5                               &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &none
-&kp TAB           &kp Q   &kp W             &kp E         &kp R         &kp T                                &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
-&kp LEFT_SHIFT    &kp A   &kp S             &kp D         &kp F         &kp G                                &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
-&kp LEFT_CONTROL  &kp Z   &kp X             &kp C         &kp V         &kp B   &kp LBKT       &kp C_MUTE    &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
-                          &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &mo 2   &lt 6 SPACE    &lt 10 ENTER  &mo 4   &layer_ru  &none      &mo 5
+&kp GRAVE         &kp N1  &kp N2            &kp N3        &kp N4        &kp N5                                    &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &screen_shot
+&kp TAB           &kp Q   &kp W             &kp E         &kp R         &kp T                                     &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
+&kp LEFT_SHIFT    &kp A   &kp S             &kp D         &kp F         &kp G                                     &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
+&kp LEFT_CONTROL  &kp Z   &kp X             &kp C         &kp V         &kp B   &kp K_PLAY_PAUSE    &kp C_MUTE    &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
+                          &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &mo 2   &lt 6 SPACE         &lt 10 ENTER  &mo 4   &layer_ru  &none      &mo 5
             >;
 
             display-name = "EN";
             sensor-bindings =
+                <&inc_dec_kp K_NEXT K_PREV>,
                 <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>,
+                <&inc_dec_kp K_NEXT K_PREV>,
                 <&enc_vol>;
 
             label = "EN";
