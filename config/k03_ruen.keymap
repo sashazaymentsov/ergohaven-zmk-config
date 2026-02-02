@@ -349,6 +349,10 @@
         };
 
         mouse_s {
+            compatible = "zmk,behavior-mouse-move";
+            acceleration-exponent = <0>;
+            time-to-max-speed-ms = <1000>;
+            delay-ms = <100>;
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans                    &trans          &trans          &mkp MCLK       &trans           &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans  &trans
