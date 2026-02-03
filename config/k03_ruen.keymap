@@ -16,9 +16,8 @@
         mouse_slow: mouse_slow {
             compatible = "zmk,behavior-mouse-move";
             label = "mmvs";
-            acceleration-exponent = <0>;
-            time-to-max-speed-ms = <1000>;
-            delay-ms = <100>;
+            #binding-cells = <1>;
+            move-multiplier = <10>; 
         };  
 
 
@@ -367,12 +366,6 @@
             label = "mouse_s";
         };
     };
-     mouse {
-            compatible = "zmk,mouse";
-            accel-factor = <12>;
-            delay-ms = <0>;
-            time-to-max-speed-ms = <100>;
-            scroll-accel-factor = <12>;
-        };
+     
     
 };
