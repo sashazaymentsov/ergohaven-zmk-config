@@ -23,8 +23,9 @@
 
         mmvs: mmvs {
             compatible = "zmk,behavior-mouse-move";
+            label = "MMVS";
             #binding-cells = <1>;
-            move-multiplier = <10>;  // Только это!
+            move-multiplier = <10>; 
         };
                 
             
