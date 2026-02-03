@@ -22,7 +22,7 @@
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
         
-        mmvs: mmvs {
+        slow: slow {
             compatible = "zmk,behavior-mouse-move";
             #binding-cells = <1>;
             input-listener = <&input_processor_listener_slow_mouse>;
@@ -368,8 +368,8 @@
         mouse_s {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans                    &trans          &trans           &mkp MCLK        &trans            &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK        &mmvs MOVE_UP    &mkp RCLK         &trans  &trans
-&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmvs MOVE_LEFT  &mmvs MOVE_DOWN  &mmvs MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK        &slow MOVE_UP    &mkp RCLK         &trans  &trans
+&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &slow MOVE_LEFT  &slow MOVE_DOWN  &slow MOVE_RIGHT  &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans  &trans    &trans  &trans          &msc SCRL_LEFT   &trans           &msc SCRL_RIGHT   &trans  &trans
                 &trans     &trans     &trans     &trans  &trans    &trans  &trans          &trans           &trans           &trans
             >;
