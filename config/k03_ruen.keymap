@@ -14,8 +14,8 @@
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
         mouse_slow: mouse_slow {
-            label = "mmvs";
             compatible = "zmk,behavior-mouse-move";
+            label = "mmvs";
             acceleration-exponent = <0>;
             time-to-max-speed-ms = <1000>;
             delay-ms = <100>;
@@ -27,7 +27,6 @@
             label = "TD0";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp LC(SLASH)>;
-
             tapping-term-ms = <300>;
         };
 
@@ -359,8 +358,8 @@
         mouse_s {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans                    &trans          &trans          &mkp MCLK       &trans           &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK       &mmvs MOVE_UP    &mkp RCLK        &trans  &trans
-&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmvs MOVE_LEFT  &mmvs MOVE_DOWN  &mmvs MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK       &mmvs MOVE_UP   &mkp RCLK        &trans  &trans
+&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmvs MOVE_LEFT &mmvs MOVE_DOWN &mmvs MOVE_RIGHT &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans  &trans    &trans  &trans          &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans  &trans
                 &trans     &trans     &trans     &trans  &trans    &trans  &trans          &trans          &trans          &trans
             >;
@@ -370,11 +369,10 @@
     };
      mouse {
             compatible = "zmk,mouse";
-            
             accel-factor = <12>;
             delay-ms = <0>;
             time-to-max-speed-ms = <100>;
             scroll-accel-factor = <12>;
         };
-    };
+    
 };
