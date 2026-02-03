@@ -10,13 +10,13 @@
 
 &mmv {
     time-to-max-speed-ms = <100>;
-    acceleration-exponent = <0>;
+    acceleration-exponent = <1>;
 };
 
 / {
     sniper {
         input-processors = <&zip_xy_scaler 1 8>;
-        layers = <12>;
+        layers = <11>;
     };
 
     behaviors {
