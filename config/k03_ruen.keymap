@@ -24,6 +24,7 @@
         mmvs: mmvs {
             compatible = "zmk,behavior-mouse-move";
             label = "MMVS";
+            bindings = <&mmv>;
             #binding-cells = <1>;
             move-multiplier = <10>; 
         };
@@ -35,7 +36,6 @@
             label = "TD0";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp LC(SLASH)>;
-
             tapping-term-ms = <300>;
         };
 
