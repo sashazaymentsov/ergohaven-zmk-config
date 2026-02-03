@@ -6,12 +6,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&mmv { time-to-max-speed-ms = <100>; };
 
-&msc {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <100>;
-};
 
 / {
     behaviors {
@@ -370,11 +365,13 @@
             label = "mouse_s";
         };
     };
-&trackball_listener {
-    input-processors =  <&zip_xy_scaler 9 20>;    };
 
-    sniper {
+&trackball_listener {
+    input-processors =  <&zip_xy_scaler 1 8>;
+
+    mouse_s {
         layers = <12>;
         input-processors = <&zip_xy_scaler 1 8>;
+    };
     };
 };
