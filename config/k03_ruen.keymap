@@ -13,9 +13,8 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
-        mmvs: mmvs {
+        mmvs: mouse_move_slow {
             compatible = "zmk,behavior-mouse-move";
-            label = "mmvs";
             #binding-cells = <1>;
             move-multiplier = <10>; 
         };  
