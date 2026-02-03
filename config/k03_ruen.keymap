@@ -24,11 +24,11 @@
 
         mmvs: mmvs {
             compatible = "zmk,behavior-mouse-move";
-            label = "MMVS";
             #binding-cells = <1>;
-            input-processors =  <&zip_xy_scaler 1 8>;
+            move-multiplier = <10>;  // Только это!
+        };
                 
-            };
+            
 
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
