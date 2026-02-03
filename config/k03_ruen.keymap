@@ -1,3 +1,6 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20 
+
 #include "keys_ru.h"
 #include <behaviors.dtsi>
 #include <input/processors.dtsi>
@@ -7,6 +10,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 
+&mmv_input_listener {
+    input-processors = <&zip_xy_scaler 1 8>;
+};
 
 / {
     behaviors {
@@ -16,6 +22,14 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
+        mmvs: mmvs {
+            compatible = "zmk,behavior-mouse-move";
+            label = "MMVS";
+            #binding-cells = <1>;
+            input-processors =  <&zip_xy_scaler 1 8>;
+                
+            };
 
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
@@ -356,8 +370,8 @@
         mouse_s {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans                    &trans          &trans           &mkp MCLK        &trans            &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK        &mmv MOVE_UP    &mkp RCLK         &trans  &trans
-&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK        &mmvs MOVE_UP    &mkp RCLK         &trans  &trans
+&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmvs MOVE_LEFT  &mmvs MOVE_DOWN  &mmvs MOVE_RIGHT  &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans  &trans    &trans  &trans          &msc SCRL_LEFT   &trans           &msc SCRL_RIGHT   &trans  &trans
                 &trans     &trans     &trans     &trans  &trans    &trans  &trans          &trans           &trans           &trans
             >;
@@ -366,14 +380,6 @@
         };
     };
 };
-&trackball_listener {
-    input-processors =  <&zip_xy_scaler 1 8>;
-
-    mouse_s {
-        layers = <12>;
-        input-processors = <&zip_xy_scaler 1 8>;
-    };
-    };
 
 
 
