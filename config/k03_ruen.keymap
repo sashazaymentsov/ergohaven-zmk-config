@@ -12,7 +12,7 @@
 
     sniper {
         input-processors = <&zip_xy_scaler 1 8>;
-        layers = <12>
+        layers = <12>;
     };
 
     behaviors {
