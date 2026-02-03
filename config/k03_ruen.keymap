@@ -14,10 +14,6 @@
     acceleration-exponent = <1>;
 };
 
-/ {
-
-
-
 &mmv_input_listener {
    sniper {
         input-processors = <&zip_xy_scaler 1 8>;
@@ -26,7 +22,8 @@
 };
 
 
-    
+/ {
+  
 
     behaviors {
         enc_vol: enc_vol {
