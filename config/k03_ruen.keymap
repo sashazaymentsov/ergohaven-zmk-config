@@ -10,24 +10,18 @@
 
 / {
 
-    input_processor_listener_slow_mouse: input_processor_listener_slow_mouse {
-        compatible = "zmk,input-processor-listener";
+    sniper {
         input-processors = <&zip_xy_scaler 1 8>;
+        layers = <12>
     };
+
     behaviors {
         enc_vol: enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENC_VOL";
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
-        };
-        
-        slow: slow {
-            compatible = "zmk,behavior-mouse-move";
-            binding-cells = <1>;
-            input-listener = <&input_processor_listener_slow_mouse>;
-        };
-                
+        };                
             
 
         td0: td0 {
@@ -368,8 +362,8 @@
         mouse_s {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans                    &trans          &trans           &mkp MCLK        &trans            &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK        &slow MOVE_UP    &mkp RCLK         &trans  &trans
-&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &slow MOVE_LEFT  &slow MOVE_DOWN  &slow MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK        &mmv MOVE_UP     &mkp RCLK         &trans  &trans
+&trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans  &trans    &trans  &trans          &msc SCRL_LEFT   &trans           &msc SCRL_RIGHT   &trans  &trans
                 &trans     &trans     &trans     &trans  &trans    &trans  &trans          &trans           &trans           &trans
             >;
