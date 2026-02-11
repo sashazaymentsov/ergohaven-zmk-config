@@ -15,16 +15,13 @@
 };
 
 &mmv_input_listener {
-   sniper {
+    sniper {
         input-processors = <&zip_xy_scaler 1 8>;
         layers = <12>;
     };
 };
 
-
 / {
-  
-
     behaviors {
         enc_vol: enc_vol {
             compatible = "zmk,behavior-sensor-rotate";
@@ -209,11 +206,11 @@
 
         EN {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2            &kp N3        &kp N4        &kp N5                                    &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &screen_shot
-&kp TAB           &kp Q   &kp W             &kp E         &kp R         &kp T                                     &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
-&kp LEFT_SHIFT    &kp A   &kp S             &kp D         &kp F         &kp G                                     &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
-&kp LEFT_CONTROL  &kp Z   &kp X             &kp C         &kp V         &kp B   &kp K_PLAY_PAUSE    &kp C_MUTE    &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
-                          &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &mo 2   &lt 6 SPACE         &lt 11 ENTER  &mo 4   &layer_ru  &none      &mo 5
+&kp GRAVE         &kp N1    &kp N2            &kp N3        &kp N4        &kp N5                                    &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &screen_shot
+&kp TAB           &kp Q     &kp W             &kp E         &kp R         &kp T                                     &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
+&kp LEFT_SHIFT    &lt 13 A  &kp S             &kp D         &kp F         &kp G                                     &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
+&kp LEFT_CONTROL  &kp Z     &kp X             &kp C         &kp V         &kp B   &kp K_PLAY_PAUSE    &kp C_MUTE    &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
+                            &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &mo 2   &lt 6 SPACE         &lt 11 ENTER  &mo 4   &layer_ru  &none      &mo 5
             >;
 
             display-name = "EN";
@@ -229,11 +226,11 @@
         RU {
             display-name = "RU";
             bindings = <
-&kp GRAVE   &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                               &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &screen_shot
-&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T                                &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
-&kp LSHIFT  &kp A   &kp S   &kp D         &kp F         &kp G                                &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
-&kp LCTRL   &kp Z   &kp X   &kp C         &kp V         &kp B   &kp LBKT       &kp RBKT      &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
-                    &none   &kp LEFT_ALT  &kp LEFT_GUI  &mo 3   &lt 6 SPACE    &lt 11 ENTER  &mo 4   &layer_en  &none      &none
+&kp GRAVE   &kp N1    &kp N2  &kp N3        &kp N4        &kp N5                               &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &screen_shot
+&kp TAB     &kp Q     &kp W   &kp E         &kp R         &kp T                                &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
+&kp LSHIFT  &lt 13 A  &kp S   &kp D         &kp F         &kp G                                &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
+&kp LCTRL   &kp Z     &kp X   &kp C         &kp V         &kp B   &kp LBKT       &kp RBKT      &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
+                      &none   &kp LEFT_ALT  &kp LEFT_GUI  &mo 3   &lt 6 SPACE    &lt 11 ENTER  &mo 4   &layer_en  &none      &none
             >;
 
             sensor-bindings =
@@ -297,10 +294,10 @@
 
         SCuts {
             bindings = <
-&trans  &trans     &trans     &trans     &trans         &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(U)  &kp LC(I)  &kp LC(B)  &kp LS(LC(S))  &kp APOS                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)      &kp COMMA                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &kp LC(B)  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans         &trans                       &trans  &trans  &trans  &trans  &trans     &trans
+&trans  &kp LC(U)  &kp LC(I)  &kp LC(B)  &kp LS(LC(S))  &kp LA(T)                    &trans  &trans  &trans  &trans  &kp LA(P)  &trans
+&trans  &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)      &kp LC(G)                    &trans  &trans  &trans  &trans  &trans     &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LG(C)  &kp LG(V)      &kp LC(B)  &trans    &trans  &trans  &trans  &trans  &trans  &trans     &trans
                    &trans     &trans     &trans         &trans     &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
@@ -377,6 +374,18 @@
             >;
 
             label = "mouse_s";
+        };
+
+        switcher {
+            bindings = <
+&trans  &trans  &trans       &trans       &trans       &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans       &trans       &trans       &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LA(TAB)  &kp LC(TAB)  &kp LG(TAB)  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans       &kp LC(W)    &kp LG(W)    &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans       &trans       &trans       &trans  &kp LEFT_SHIFT    &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "switcher";
         };
     };
 };
