@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include "keys_ru.h"
@@ -10,13 +10,13 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &mmv {
-    time-to-max-speed-ms = <100>;
+    time-to-max-speed-ms = <150>;
     acceleration-exponent = <1>;
 };
 
 &mmv_input_listener {
     sniper {
-        input-processors = <&zip_xy_scaler 1 8>;
+        input-processors = <&zip_xy_scaler 1 6>;
         layers = <12>;
     };
 };
