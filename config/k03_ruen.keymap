@@ -84,6 +84,17 @@
             #binding-cells = <2>;
             tapping-term-ms = <175>;
         };
+
+        copy_paste_tap_dance: copy_paste_tap_dance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "COPY_PASTE_TAP_DANCE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <190>;
+            hold-trigger-on-release;
+        };
     };
 
     combos {
@@ -235,19 +246,15 @@
 
         EN {
             bindings = <
-&kp GRAVE         &kp N1    &kp N2            &kp N3        &kp N4        &kp N5                                       &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &kp PRINTSCREEN
-&kp TAB           &kp Q     &kp W             &kp E         &kp R         &kp T                                        &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
-&kp LEFT_SHIFT    &lt 13 A  &kp S             &kp D         &kp F         &kp G                                        &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
-&kp LEFT_CONTROL  &kp Z     &kp X             &kp C         &kp V         &kp B   &kp K_PLAY_PAUSE       &kp C_MUTE    &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
-                            &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &mo 2   &l_tap_hold 6 SPACE    &lt 11 ENTER  &mo 4   &layer_ru  &none      &mo 5
+&kp GRAVE         &kp N1    &kp N2            &kp N3                         &kp N4                         &kp N5                                       &kp N6  &kp N7     &kp N8     &kp N9   &kp N0      &kp PRINTSCREEN
+&kp TAB           &kp Q     &kp W             &kp E                          &kp R                          &kp T                                        &kp Y   &kp U      &kp I      &kp O    &kp P       &to 8
+&kp LEFT_SHIFT    &lt 13 A  &kp S             &copy_paste_tap_dance LC(C) D  &copy_paste_tap_dance LC(F) F  &kp G                                        &kp H   &kp J      &kp K      &kp L    &lt 7 SEMI  &none
+&kp LEFT_CONTROL  &kp Z     &kp X             &kp C                          &kp V                          &kp B   &kp K_PLAY_PAUSE       &kp C_MUTE    &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH    &none
+                            &kp LEFT_CONTROL  &kp LEFT_ALT                   &kp LEFT_GUI                   &mo 2   &l_tap_hold 6 SPACE    &lt 11 ENTER  &mo 4   &layer_ru  &none      &mo 5
             >;
 
             display-name = "EN";
-            sensor-bindings =
-                <&inc_dec_kp K_NEXT K_PREV>,
-                <&enc_vol>,
-                <&inc_dec_kp K_NEXT K_PREV>,
-                <&enc_vol>;
+            sensor-bindings = <&inc_dec_kp K_NEXT K_PREV>, <&enc_vol>;
 
             label = "EN";
         };
@@ -262,13 +269,7 @@
                       &none   &kp LEFT_ALT  &kp LEFT_GUI  &mo 3   &lt 6 SPACE    &lt 11 ENTER  &mo 4   &layer_en  &none      &none
             >;
 
-            sensor-bindings =
-                <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>,
-                <&enc_vol>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>, <&enc_vol>;
 
             label = "RU";
         };
@@ -324,10 +325,10 @@
         SCuts {
             bindings = <
 &trans  &trans     &trans     &trans     &trans         &trans                       &trans  &trans  &trans  &trans  &trans     &trans
-&trans  &kp LC(U)  &kp LC(I)  &kp LC(B)  &kp LS(LC(S))  &kp LA(T)                    &trans  &trans  &trans  &trans  &kp LA(P)  &trans
-&trans  &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)      &kp LC(G)                    &trans  &trans  &trans  &trans  &trans     &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LG(C)  &kp LG(V)      &kp LC(B)  &trans    &trans  &trans  &trans  &trans  &trans  &trans     &trans
-                   &trans     &trans     &trans         &trans     &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(U)  &kp LC(I)  &kp LC(B)  &kp LS(LC(S))  &kp LA(T)                    &trans  &kp N7  &kp N8  &kp N9  &kp LA(P)  &trans
+&trans  &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)      &kp LC(G)                    &trans  &kp N4  &kp N5  &kp N6  &trans     &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)      &kp LC(B)  &trans    &trans  &trans  &kp N1  &kp N2  &kp N3  &trans     &trans
+                   &trans     &trans     &trans         &trans     &trans    &trans  &trans  &trans  &kp N0  &trans
             >;
 
             label = "SCuts";
@@ -355,6 +356,7 @@
             >;
 
             label = "GL_1";
+            sensor-bindings = <&inc_dec_kp C_NEXT K_PREV>, <&enc_vol>;
         };
 
         GL_2 {
@@ -410,7 +412,7 @@
 &trans  &trans  &trans       &trans       &trans       &trans                                   &trans          &trans          &mkp MB3  &trans           &trans  &trans
 &trans  &trans  &mkp MB3     &mkp MB2     &mkp MB1     &kp PAGE_UP                              &msc SCRL_UP    &mkp LCLK       &trans    &mkp MB2         &trans  &trans
 &trans  &trans  &kp LA(TAB)  &kp LC(TAB)  &kp LG(TAB)  &kp PAGE_DOWN                            &msc SCRL_DOWN  &trans          &trans    &trans           &trans  &trans
-&trans  &trans  &trans       &kp LC(W)    &kp LG(W)    &trans         &trans            &trans  &trans          &msc SCRL_LEFT  &trans    &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans       &none        &none        &trans         &trans            &trans  &trans          &msc SCRL_LEFT  &trans    &msc SCRL_RIGHT  &trans  &trans
                 &trans       &trans       &trans       &trans         &kp LEFT_SHIFT    &trans  &trans          &trans          &trans    &trans
             >;
 
