@@ -303,11 +303,11 @@
 
         en_sy {
             bindings = <
-&trans  &trans                &trans        &trans         &trans        &none                         &trans         &trans         &trans     &trans       &trans   &trans
-&trans  &kp LEFT_BRACE        &td4          &kp EQUAL      &kp LS(PLUS)  &kp SQT                       &kp LS(COLON)  &kp LS(QMARK)  &kp GRAVE  &kp LS(SQT)  &kp DQT  &trans
-&trans  &kp LEFT_PARENTHESIS  &kp LS(LT)    &kp LS(UNDER)  &kp LS(GT)    &kp COMMA                     &kp SEMI       &kp DOT        &kp COMMA  &trans       &trans   &trans
-&trans  &kp LEFT_BRACKET      &kp LS(STAR)  &kp FSLH       &kp LS(AT)    &trans     &trans     &trans  &trans         &kp LS(EXCL)   &kp PRCNT  &trans       &trans   &trans
-                              &trans        &trans         &kp BSPC      &none      &kp RET    &trans  &trans         &trans         &trans     &trans
+&trans                 &trans                &trans         &trans         &trans        &none                        &trans         &trans         &trans     &trans                &trans   &trans
+&kp RIGHT_BRACE        &kp LEFT_BRACE        &kp MINUS      &kp EQUAL      &kp LS(PLUS)  &kp SQT                      &kp LS(COLON)  &kp LS(QMARK)  &kp GRAVE  &kp LS(SQT)           &kp DQT  &trans
+&kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp LS(LT)     &kp LS(UNDER)  &kp LS(GT)    &kp COMMA                    &kp SEMI       &kp DOT        &kp COMMA  &kp STAR              &trans   &trans
+&kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp LS(STAR)   &kp FSLH       &kp LS(AT)    &trans     &trans    &trans  &trans         &kp LS(EXCL)   &kp PRCNT  &kp LEFT_PARENTHESIS  &trans   &trans
+                                             &kp BACKSLASH  &kp PIPE       &none         &none      &none     &trans  &trans         &trans         &trans     &trans
             >;
 
             label = "en_sy";
@@ -315,11 +315,11 @@
 
         ru_sy {
             bindings = <
-&trans  &trans            &trans        &trans         &trans        &none                         &trans         &trans         &trans     &trans       &trans  &trans
-&trans  &en LEFT_BRACE    &td0          &kp EQUAL      &kp LS(PLUS)  &en SQT                       &en LS(COLON)  &en LS(QMARK)  &en GRAVE  &en LS(DQT)  &trans  &trans
-&trans  &kp LPAR          &en LS(LT)    &kp LS(UNDER)  &en LS(GT)    &en COMMA                     &en SEMI       &en DOT        &en COMMA  &trans       &trans  &trans
-&trans  &en LEFT_BRACKET  &kp LS(STAR)  &en FSLH       &en LS(AT)    &trans     &trans     &trans  &trans         &kp LS(EXCL)   &kp PRCNT  &trans       &trans  &trans
-                          &trans        &trans         &kp BSPC      &none      &kp RET    &trans  &trans         &trans         &trans     &trans
+&trans                 &trans            &trans         &trans         &trans        &none                        &trans         &trans         &trans     &trans                &trans   &trans
+&en RIGHT_BRACE        &en LEFT_BRACE    &en MINUS      &kp EQUAL      &kp LS(PLUS)  &en SQT                      &en LS(COLON)  &en LS(QMARK)  &en GRAVE  &en SQT               &en DQT  &trans
+&en RIGHT_PARENTHESIS  &en LPAR          &en LS(LT)     &kp LS(UNDER)  &en LS(GT)    &en COMMA                    &en SEMI       &en DOT        &en COMMA  &en STAR              &trans   &trans
+&en RIGHT_BRACKET      &en LEFT_BRACKET  &kp LS(STAR)   &en FSLH       &en LS(AT)    &trans     &trans    &trans  &trans         &kp LS(EXCL)   &en PRCNT  &en LEFT_PARENTHESIS  &trans   &trans
+                                         &en BACKSLASH  &en PIPE       &none         &none      &none     &trans  &trans         &trans         &trans     &trans
             >;
 
             label = "ru_sy";
